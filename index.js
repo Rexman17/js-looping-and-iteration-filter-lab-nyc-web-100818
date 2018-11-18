@@ -9,18 +9,26 @@ function findMatching(drivers, string) {
   return array;
 }
 
-function fuzzyMatch(drivers, lettersString) {
-  const array = [];
-  for (const driver of drivers) {
-    if (driver.startsWith(lettersString)) {
-      array.push(driver);
-    }
-  }
-  return array;
+// alternative: function findMatching (list, name) {
+//   return list.filter(function (driverName) {
+//     return driverName.toLowerCase() === name.toLowerCase();
+//   });
+// }
+//
+// function fuzzyMatch(drivers, lettersString) {
+//   const array = [];
+//   for (const driver of drivers) {
+//     if (driver.startsWith(lettersString)) {
+//       array.push(driver);
+//     }
+//   }
+//   return array;
+// }
+
+function fuzzyMatch(drivers, letters) {
+  return drivers.filter(function (drivers) { return driver.startsWith(letters)});
 }
 
 function matchName(drivers, string) {
   return drivers.filter(function (driver) { return driver['name'] === string});
 }
-
-// Write matchName - This function takes an array of drivers and a string as arguments. In this function, each element of the drivers array is a JavaScript object that has a property of name. The function should return each element whose name property matches the provided string argument.
